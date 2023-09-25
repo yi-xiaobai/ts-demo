@@ -23,7 +23,6 @@ function typeProtect(person: Teacher | Worker) {
   (person as Worker).work();
 }
 
-
 //* 利用 in 关键字看变量 符合条件吗  进行类型保护
 function typeProtect1(person: Teacher | Worker) {
   //* person中有没有goHomeWork方法
@@ -35,7 +34,6 @@ function typeProtect1(person: Teacher | Worker) {
   }
 }
 
-
 //* 利用typeof进行类型保护
 function add(num: string | number, num1: string | number) {
   if (typeof num === "string" || typeof num1 === "string") {
@@ -43,4 +41,16 @@ function add(num: string | number, num1: string | number) {
   } else {
     return num + num1;
   }
+}
+
+//* 对类进行类型保护
+class NumberObj {
+  count: number;
+}
+
+function addObj(first: Object | NumberObj, second: Object | NumberObj) {
+  if (first instanceof NumberObj && second instanceof NumberObj) {
+    return first.count + second.count;
+  }
+  return 0;
 }
