@@ -1,12 +1,12 @@
-class Person {
+class Person1 {
   public readonly name: string;
   constructor(name: string) {
     this.name = name;
   }
 }
 
-const p = new Person("yyll");
-console.log("==>Get 名称为：%s", p.name); //* ==>Get 名称为：yyll
+const person = new Person1("yyll");
+console.log("==>Get 名称为：%s", person.name); //* ==>Get 名称为：yyll
 //* p.name = '111'   readonly 只读属性 不允许修改
 
 abstract class behavior {
