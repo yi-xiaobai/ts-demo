@@ -20,12 +20,9 @@ let myIdentify19: GenericsIdenitfy = identify19;
 
 interface GenericsIdenitfy1<T> {
   (arg: T): T;
-  (num1: T, num2: T): T;
 }
 function identify119<V>(arg: V): V {
   return arg;
 }
-
-function add<U>(num1: U, num2: U): U {
-  return `${num1}${num2}`;
-}
+let myIdentify119: GenericsIdenitfy1<string> = identify119;
+console.log("==>Get 接口泛型", myIdentify119("123456")); //* ==>Get 接口泛型 123456
