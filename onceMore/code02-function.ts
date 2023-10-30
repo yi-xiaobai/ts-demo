@@ -33,5 +33,5 @@ function add1(base: number | number[], incre: number | number[]): number[] {
   return res;
 }
 
-console.log(add1([1, 2], 2));
-console.log(add1(1, [2, 6]));
+// console.log(add1([1, 2], 2));
+// console.log(add1(1, [2, 6]));
