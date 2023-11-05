@@ -18,3 +18,30 @@ myFunc([1, 2, 3]);
 //   //! any类型没有类型检查的提示
 //   params.forEach((element) => {});
 // }
+
+interface Iuser {
+  name: string;
+  job: Ijob;
+}
+
+interface Ijob {
+  title: string;
+}
+
+const user4: Iuser = {
+  name: "llyy",
+  job: {
+    title: "断言应用场景",
+  },
+};
+
+// const { name, job = {} } = user4;
+// const { title } = job; //* Property 'title' does not exist on type '{}'
+//* 为 job 提供了一个空对象作为默认值 TypeScript 会认为此时 job 的类型就是一个空对象  顾读取不到title的值
+
+const { name, job = {} as Ijob } = user4;
+const { title } = job;
+console.log("==>Get name", name); //* llyy
+console.log("==>Get title", title); //* 断言应用场景
+
+export {};
