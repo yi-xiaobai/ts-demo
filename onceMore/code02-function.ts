@@ -16,8 +16,12 @@ function handler2(): undefined {
 // 函数重载
 function add1(base: number[], incre: number): number[];
 function add1(base: number, incre: number[]): number[];
+function add1(base: number, incre: number): number;
 
-function add1(base: number | number[], incre: number | number[]): number[] {
+function add1(
+  base: number | number[],
+  incre: number | number[]
+): number | number[] {
   const res: number[] = [];
   if (Array.isArray(base) && typeof incre === "number") {
     for (const item of base) {
@@ -28,10 +32,13 @@ function add1(base: number | number[], incre: number | number[]): number[] {
       res.push(item + base);
     }
   } else if (typeof base === "number" && typeof incre === "number") {
-    res.push(base + incre);
+    // res.push(base + incre);
+    return base + incre;
   }
   return res;
 }
 
-// console.log(add1([1, 2], 2));
-// console.log(add1(1, [2, 6]));
+//* 此处调用函数 上面的重载函数声明必须有对应的类型存在 否则会报错
+console.log(add1([1, 2], 2));
+console.log(add1(1, [2, 6]));
+console.log(add1(1, 2));
