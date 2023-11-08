@@ -46,12 +46,13 @@ const userWitoutPhone = {
 type UserPropsExclude = "name" | "age" | "email" | "phone" | "address";
 type RequiredUserProps = "name" | "address";
 
+//* 移除RequiredUserProps所包含的数据
 type OptionsExclude = Exclude<UserPropsExclude, RequiredUserProps>;
-const optionsExclude: OptionsExclude = "email" | "phone" | "age";
+const optionsExclude: OptionsExclude = "email";
 
 //* Extract：提取另一个类型中也存在的部分 即交集
 type OptionsExtract = Extract<UserPropsExclude, RequiredUserProps>;
-const optionsExtract: OptionsExtract = "name" | "address";
+const optionsExtract: OptionsExtract = "name";
 
 //* Parameters：提取函数的参数类型
 //* ReturnType：返回值类型
@@ -88,4 +89,4 @@ async function getPromise() {
   });
 }
 
-type Result = Awaited<ReturnType<typeof getPromise>>;
+type Result = Awaited<ReturnType<typeof getPromise>>; //* type Result = string
