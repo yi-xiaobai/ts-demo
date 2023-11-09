@@ -11,9 +11,9 @@ const v1: Version = "1.2.3";
 // 不符合要求
 // const v2: Version = "1.2";  //* Type '"1.2"' is not assignable to type '`${number}.${number}.${number}`'
 
-// type SayHello<K> = `hi ${K}`;
-// type Greet1 = SayHello<"didi">; //* type Greet2 = "hi didi"
-// type Greet2 = SayHello<11>; //* type Greet2 = "hi false"
+type SayHello<K extends string | number | bigint> = `hi ${K}`;
+type Greet1 = SayHello<"didi">; //* type Greet2 = "hi didi"
+type Greet2 = SayHello<11>; //* type Greet2 = "hi false"
 
 type Brand = "iphone" | "xiaomi" | "honor";
 
