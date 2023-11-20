@@ -14,9 +14,15 @@ interface ResStr {
   data: any;
 }
 
-// declare var res: ResStr;
-// if (res.status === "success") {
-// }
+declare var res: ResStr;
+res = {
+  code: 10000,
+  status: "success",
+  data: true,
+};
+if (res.status === "success") {
+  console.log(res);
+}
 
 //* 字符串字面量类型
 const str1: "didi" = "didi";

@@ -1,7 +1,12 @@
 //* 字面量类型和枚举类型
-// declare var res: ResStr;
-// if (res.status === "success") {
-// }
+res = {
+    code: 10000,
+    status: "success",
+    data: true,
+};
+if (res.status === "success") {
+    console.log(res);
+}
 //* 字符串字面量类型
 var str1 = "didi";
 //* 数字字面量类型
@@ -65,3 +70,6 @@ var Item3;
 })(Item3 || (Item3 = {}));
 console.log(Item3.Bar); //* haha
 var fooValue = 0 /* Item5.Foo */;
+//* 针对于 let  const
+//* let：该值从属的类型
+//* const：声明的原始类型变量将不可改变

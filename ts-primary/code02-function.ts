@@ -18,6 +18,7 @@ function add1(base: number[], incre: number): number[];
 function add1(base: number, incre: number[]): number[];
 function add1(base: number, incre: number): number;
 
+//* 此处是add1函数的具体实现
 function add1(
   base: number | number[],
   incre: number | number[]
