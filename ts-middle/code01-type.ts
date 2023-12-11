@@ -16,7 +16,7 @@ const voidVar2: void = undefined;
 
 //* 数组的类型标注
 
-//* 定义数组
+//* 定义数组xx
 const arr1: string[] = [];
 const arr2: Array<string> = [];
 

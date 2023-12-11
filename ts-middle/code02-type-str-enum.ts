@@ -125,6 +125,6 @@ const enum Item5 {
 
 const fooValue = Item5.Foo;
 
-//* 针对于 let  const
-//* let：该值从属的类型
-//* const：声明的原始类型变量将不可改变
+//* 针对于 let  const 
+//* let：该值从属的类型  比如 let identifier = 'yyll'  类型会被推断为string类型
+//* const：声明的原始类型变量将不可改变 const identifier = 'llyy' 类型会被推断为 'llyy'类型
